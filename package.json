@@ -1,0 +1,65 @@
+{
+  "name": "@justin06lee/hellatuff",
+  "version": "0.1.0",
+  "description": "Headless React article editor with optional renderer, drawing window, and starter styles.",
+  "license": "MIT",
+  "author": "justin06lee",
+  "type": "module",
+  "sideEffects": ["**/*.css"],
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./renderer": {
+      "types": "./dist/renderer.d.ts",
+      "import": "./dist/renderer.js"
+    },
+    "./drawing": {
+      "types": "./dist/drawing.d.ts",
+      "import": "./dist/drawing.js"
+    },
+    "./styles.css": "./dist/hellatuff.css"
+  },
+  "scripts": {
+    "build": "bun run build.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "prepublishOnly": "bun run lint && bun run typecheck && bun run test && bun run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react-markdown": { "optional": true },
+    "remark-gfm": { "optional": true },
+    "remark-math": { "optional": true },
+    "rehype-katex": { "optional": true },
+    "rehype-highlight": { "optional": true },
+    "rehype-slug": { "optional": true },
+    "katex": { "optional": true }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@happy-dom/global-registrator": "^15.7.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/bun": "^1.1.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "typescript": "^5.5.0"
+  },
+  "keywords": ["markdown", "editor", "react", "article", "vim", "headless"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin06lee/hellatuff.git"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  }
+}
