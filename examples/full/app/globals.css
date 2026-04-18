@@ -1,0 +1,15 @@
+@import "@justin06lee/hellatuff/styles.css";
+@import "katex/dist/katex.min.css";
+
+body {
+  margin: 0;
+  font-family: var(--hlt-font-sans);
+  background: var(--hlt-background);
+  color: var(--hlt-foreground);
+}
+
+main {
+  max-width: 88rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
