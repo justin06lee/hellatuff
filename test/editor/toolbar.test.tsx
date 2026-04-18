@@ -12,7 +12,7 @@ describe("Toolbar", () => {
     const boldButton = screen.getByRole("button", { name: "Bold" });
     boldButton.click();
     expect(onAction).toHaveBeenCalledTimes(1);
-    expect(onAction.mock.calls[0][0].label).toBe("Bold");
+    expect((onAction.mock.calls[0] as unknown[])[0]).toHaveProperty("label", "Bold");
   });
 
   it("renders trailing content when provided", () => {

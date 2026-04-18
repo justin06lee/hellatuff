@@ -35,7 +35,7 @@ describe("Editor", () => {
       await Promise.resolve();
     });
     expect(onSave).toHaveBeenCalledTimes(1);
-    expect(onSave.mock.calls[0][1]).toBe("v1");
+    expect((onSave.mock.calls[0] as unknown[])[1]).toBe("v1");
     await act(async () => {
       await Promise.resolve();
     });
@@ -94,6 +94,6 @@ describe("Editor", () => {
     await act(async () => {
       await Promise.resolve();
     });
-    expect(onDirtyChange.mock.calls.some(([d]) => d === true)).toBe(true);
+    expect(onDirtyChange.mock.calls.some((args) => (args as unknown[])[0] === true)).toBe(true);
   });
 });
