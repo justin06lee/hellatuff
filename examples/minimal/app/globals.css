@@ -1,0 +1,14 @@
+@import "@justin06lee/hellatuff/styles.css";
+
+body {
+  margin: 0;
+  font-family: var(--hlt-font-sans);
+  background: var(--hlt-background);
+  color: var(--hlt-foreground);
+}
+
+main {
+  max-width: 72rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
