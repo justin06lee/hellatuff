@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
-import { act, renderHook } from "@testing-library/react";
+import { act, cleanup, renderHook } from "@testing-library/react";
 import { useAutoTheme } from "../../src/hooks/use-auto-theme";
+
+afterEach(cleanup);
 
 describe("useAutoTheme", () => {
   beforeEach(() => {

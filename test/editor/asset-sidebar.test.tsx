@@ -1,7 +1,9 @@
-import { describe, expect, it, mock } from "bun:test";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, mock } from "bun:test";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { AssetSidebar } from "../../src/editor/AssetSidebar";
 import type { AssetBase } from "../../src/types";
+
+afterEach(cleanup);
 
 const asset: AssetBase = {
   id: "a1",

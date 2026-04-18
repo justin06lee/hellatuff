@@ -1,6 +1,8 @@
-import { describe, expect, it, mock } from "bun:test";
-import { renderHook } from "@testing-library/react";
+import { afterEach, describe, expect, it, mock } from "bun:test";
+import { cleanup, renderHook } from "@testing-library/react";
 import { useDirty } from "../../src/hooks/use-dirty";
+
+afterEach(cleanup);
 
 describe("useDirty", () => {
   it("returns false when raw equals baseline", () => {

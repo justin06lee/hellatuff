@@ -38,7 +38,7 @@ export function createFrontmatterParser(
 
     const titleMatch = lines[cursor]?.match(/^#\s+(.+)$/);
     if (titleMatch) {
-      title = titleMatch[1].trim();
+      title = titleMatch[1]!.trim();
       cursor += 1;
     }
 
@@ -54,12 +54,12 @@ export function createFrontmatterParser(
         break;
       }
 
-      const key = kvMatch[1].toLowerCase();
+      const key = kvMatch[1]!.toLowerCase();
       if (!lowerKeys.has(key)) {
         break;
       }
 
-      const rawValue = kvMatch[2];
+      const rawValue = kvMatch[2]!;
       const normalizer = normalize[key];
       metadata[key] = normalizer ? normalizer(rawValue) : rawValue;
       cursor += 1;

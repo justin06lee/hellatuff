@@ -1,7 +1,9 @@
-import { describe, expect, it, mock } from "bun:test";
-import { render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, mock } from "bun:test";
+import { cleanup, render, screen } from "@testing-library/react";
 import { DEFAULT_TOOLBAR } from "../../src/editor/defaults";
 import { Toolbar } from "../../src/editor/Toolbar";
+
+afterEach(cleanup);
 
 describe("Toolbar", () => {
   it("renders a button per action and fires onAction on click", () => {

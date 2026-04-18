@@ -26,7 +26,7 @@ export const titleOnlyParser: DraftParser = (raw, fallbackTitle) => {
 
   const titleMatch = lines[cursor]?.match(/^#\s+(.+)$/);
   if (titleMatch) {
-    title = titleMatch[1].trim();
+    title = titleMatch[1]!.trim();
     cursor += 1;
   }
 

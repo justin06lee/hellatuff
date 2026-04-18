@@ -170,16 +170,18 @@ export function Editor<TAsset extends AssetBase = AssetBase>(
     if (!assetToDelete || !onAssetDelete) return;
     setAssetError("");
     setDeletingAssetId(assetToDelete.id);
-    startTransition(async () => {
-      try {
-        await onAssetDelete(assetToDelete);
-        setAssets((current) => current.filter((a) => a.id !== assetToDelete.id));
-        setAssetToDelete(null);
-      } catch (err) {
-        setAssetError(err instanceof Error ? err.message : "Unable to delete.");
-      } finally {
-        setDeletingAssetId(null);
-      }
+    startTransition(() => {
+      void (async () => {
+        try {
+          await onAssetDelete(assetToDelete);
+          setAssets((current) => current.filter((a) => a.id !== assetToDelete.id));
+          setAssetToDelete(null);
+        } catch (err) {
+          setAssetError(err instanceof Error ? err.message : "Unable to delete.");
+        } finally {
+          setDeletingAssetId(null);
+        }
+      })();
     });
   }, [assetToDelete, onAssetDelete]);
 

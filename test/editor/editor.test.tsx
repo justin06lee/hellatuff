@@ -1,6 +1,8 @@
-import { describe, expect, it, mock } from "bun:test";
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, mock } from "bun:test";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Editor } from "../../src/editor/Editor";
+
+afterEach(cleanup);
 
 function mockSave(result: { version?: string; message?: string } = {}) {
   return mock(async () => result);

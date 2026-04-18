@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
-import { act, renderHook } from "@testing-library/react";
+import { act, cleanup, renderHook } from "@testing-library/react";
 import { useVimStorage, VIM_STORAGE_KEY } from "../../src/hooks/use-vim-storage";
+
+afterEach(cleanup);
 
 describe("useVimStorage", () => {
   beforeEach(() => {
