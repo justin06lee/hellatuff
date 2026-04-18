@@ -35,13 +35,27 @@
     "react-dom": ">=18"
   },
   "peerDependenciesMeta": {
-    "react-markdown": { "optional": true },
-    "remark-gfm": { "optional": true },
-    "remark-math": { "optional": true },
-    "rehype-katex": { "optional": true },
-    "rehype-highlight": { "optional": true },
-    "rehype-slug": { "optional": true },
-    "katex": { "optional": true }
+    "react-markdown": {
+      "optional": true
+    },
+    "remark-gfm": {
+      "optional": true
+    },
+    "remark-math": {
+      "optional": true
+    },
+    "rehype-katex": {
+      "optional": true
+    },
+    "rehype-highlight": {
+      "optional": true
+    },
+    "rehype-slug": {
+      "optional": true
+    },
+    "katex": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.0",
@@ -50,8 +64,15 @@
     "@types/bun": "^1.1.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
+    "katex": "^0.16.45",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "typescript": "^5.5.0"
   },
   "keywords": ["markdown", "editor", "react", "article", "vim", "headless"],

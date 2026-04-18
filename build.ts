@@ -3,7 +3,7 @@ import { mkdir, cp } from "node:fs/promises";
 
 const entries = [
   { name: "index", path: "./src/index.ts" },
-  { name: "renderer", path: "./src/renderer/index.ts" },
+  { name: "renderer", path: "./src/renderer/index.tsx" },
   { name: "drawing", path: "./src/drawing/index.ts" },
 ];
 
